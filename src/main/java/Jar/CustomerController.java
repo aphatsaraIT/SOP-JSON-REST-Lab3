@@ -74,5 +74,15 @@ public class CustomerController {
         return false;
     }
 
+    @GetMapping ("/addCustomer")
+    public boolean addCustomer(@RequestParam("ID") String ID, @RequestParam("n") String n, @RequestParam("s") String s, @RequestParam("a") int a){
+        customers.add(new Customer(ID, n, s, a));
+        return true;
+    }
 
+    @PostMapping ("/addCustomer2")
+    public boolean addCustomer2(@RequestParam("ID") String ID, @RequestParam("n") String n, @RequestParam("s") String s, @RequestParam("a") int a){
+        customers.add(new Customer(ID, n, s, a));
+        return true;
+    }
 }
